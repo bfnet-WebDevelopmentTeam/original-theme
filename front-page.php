@@ -2,7 +2,7 @@
 <div class="fv">
   <p>FVテキスト</p>
 </div>
-<?php get_template_part('templates/breadcrumbs'); ?>
+<?php get_template_part('template-parts/breadcrumbs'); ?>
 <main>
   <div class="inner">
     <div class="container news-container">
@@ -35,142 +35,48 @@
         endif;
         wp_reset_postdata();
         ?>
-        <a class="news-link" href="<?php echo esc_url(home_url('/news')); ?>">お知らせ一覧＞</a>
+        <a class="news-link" href="<?php echo esc_url(home_url('/news')); ?>">お知らせ一覧へ</a>
       </div>
-
     </div>
     <div class="container works-container">
       <h2 class="section-title">実績</h2>
-      <div class="box works-tarm-box">
-        <h3 class="section-sub-title works-tarm-title">WEB制作</h3>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
+      <div class="box works-term-box">
+        <div class="container works-term-container">
+          <div class="img-box">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
+          </div>
+          <div class="content-box">
+            <h3>WEB制作</h3>
+            <p>
+              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
+            </p>
+            <a class="works-term-link" href="works.html">WEB制作の実績ページへ</a>
+          </div>
         </div>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
+        <div class="container works-term-container">
+          <div class="img-box">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
+          </div>
+          <div class="content-box">
+            <h3>動画制作</h3>
+            <p>
+              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
+            </p>
+            <a class="works-term-link" href="works.html">動画制作の実績ページへ</a>
+          </div>
         </div>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
+        <div class="container works-term-container">
+          <div class="img-box">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
+          </div>
+          <div class="content-box">
+            <h3>SNS運用</h3>
+            <p>
+              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
+            </p>
+            <a class="works-term-link" href="works.html">SNS運用の実績ページへ</a>
+          </div>
         </div>
-        <a class="works-tarm-link" href="works.html">WEB制作の実績ページへ</a>
-      </div>
-      <div class="box works-tarm-box">
-        <h3 class="section-sub-title works-tarm-title">動画制作</h3>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <a class="works-tarm-link" href="works.html">動画制作の実績ページへ</a>
-      </div>
-      <div class="box works-tarm-box">
-        <h3 class="section-sub-title works-tarm-title">SNS運用</h3>
-
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="container works-tarm-container">
-          <a href="single-works.html">
-            <div class="img-box">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-            </div>
-            <div class="content-box">
-              <h4>実績01</h4>
-              <p>
-                実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-              </p>
-            </div>
-          </a>
-        </div>
-        <a class="works-tarm-link" href="works.html">SNS運用の実績ページへ</a>
       </div>
     </div>
   </div>

@@ -16,15 +16,6 @@
                     <h2 class="section-title">お問い合わせ</h2>
                     <div class="contact-form">
                         <?php the_content(); ?>
-                        <!-- <form method="post" action="#">
-                            <label for="name">名前</label>
-                            <input type="text" class="text" id="name" />
-                            <label for="email">メールアドレス</label>
-                            <input type="text" class="text" id="email" />
-                            <label for="message">お問い合わせ内容</label>
-                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                            <button type="submit" value="送信する">送信する</button>
-                        </form> -->
                     </div>
             <?php endwhile;
             endif; ?>

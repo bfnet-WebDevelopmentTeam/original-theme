@@ -56,7 +56,7 @@ footer {
   margin: 0 4px;
 }
 .inner {
-  max-width: 1320px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -105,18 +105,18 @@ main {
 .wp-pagenavi a:not(.wp-pagenavi a:last-child) {
   margin-right: 16px;
 }
-.works-tarm-box {
+.works-term-box {
   margin-bottom: 16px;
   border: 1px solid #333;
   box-shadow: var(--shadow);
   border-radius: 8px;
 }
 
-.works-tarm-box img {
+.works-term-box img {
   border-radius: 8px 8px 0 0;
   border-bottom: 1px solid #333;
 }
-.works-tarm-txt {
+.works-term-txt {
   line-height: 1.5;
   padding: 12px 8px;
 }
@@ -274,23 +274,20 @@ footer {
   margin-bottom: 40px;
 }
 
-.home .works-tarm-box img {
+.home .works-term-box img {
   border-radius: 0;
 }
-.home .works-tarm-box:not(.home .works-tarm-box:last-child) {
+.home .works-term-box:not(.home .works-term-box:last-child) {
   margin-bottom: 24px;
 }
-.home .works-tarm-box:last-child {
+.home .works-term-box:last-child {
   margin-bottom: 0;
 }
-.home .works-tarm-title {
-  text-align: center;
+
+.home .works-term-container {
   margin-bottom: 28px;
 }
-.home .works-tarm-container {
-  margin-bottom: 28px;
-}
-.home .works-tarm-container a {
+.home .works-term-container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -298,15 +295,16 @@ footer {
 .home .img-box {
   margin-bottom: 8px;
 }
-.home .works-tarm-box h4 {
-  font-size: 18px;
+.home .works-term-box h3 {
+  font-size: 20px;
   margin-bottom: 12px;
 }
 
 .home .content-box p {
   line-height: 1.5;
+  margin-bottom: 20px;
 }
-.home .works-tarm-link {
+.home .works-term-link {
   display: block;
   text-align: right;
 }
@@ -373,10 +371,10 @@ footer {
 }
 
 /* Worksページ */
-.works .works-tarm-heading {
+.works .works-term-heading {
   margin-bottom: 16px;
 }
-.works .works-tarm-container:not(.works .works-tarm-container:last-child) {
+.works .works-term-container:not(.works .works-term-container:last-child) {
   margin-bottom: 24px;
 }
 
@@ -446,7 +444,7 @@ footer {
   .footer-inner .menu {
     margin-bottom: 32px;
   }
-  .works-tarm-box {
+  .works-term-box {
     margin-bottom: 32px;
   }
   .home .fv p {
@@ -458,32 +456,36 @@ footer {
   }
   .section-sub-title {
     font-size: 24px;
-  }
-  .home .works-tarm-title {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .home .works-tarm-container {
+  } 
+
+/* トップページ */
+  .home .works-term-container {
     margin-bottom: 32px;
   }
-  .home .works-tarm-container a {
+  .home .works-term-container  {
     flex-direction: row;
     justify-content: space-between;
   }
-  .home .works-tarm-container:nth-of-type(2n) a {
+  .home .works-term-container:nth-of-type(2n) {
     flex-direction: row-reverse;
   }
-  .home .works-tarm-container a .img-box {
+  .home .works-term-container .img-box {
     width: 48%;
   }
-  .home .works-tarm-container a .content-box {
+  .home .works-term-container .content-box {
     width: 48%;
-    padding-top: 16px;
+    padding-top: 24px;
   }
-  .home .works-tarm-box h4 {
+  .home .works-term-box h3 {
     margin-bottom: 20px;
   }
-  .home .works-tarm-box:not(.home .works-tarm-box:last-child) {
+  .home .content-box p {
+    margin-bottom: 28px;
+  }
+  .home .works-term-container:nth-of-type(2n) .works-term-link {
+    text-align: left;
+  }
+  .home .works-term-box:not(.home .works-term-box:last-child) {
     margin-bottom: 32px;
   }
 
@@ -501,34 +503,34 @@ footer {
   }
 
   /* Worksページ */
-  .works .works-tarm-heading {
+  .works .works-term-heading {
     margin-bottom: 24px;
   }
-  .works .works-tarm-container:not(.works .works-tarm-container:last-child) {
+  .works .works-term-container:not(.works .works-term-container:last-child) {
     margin-bottom: 48px;
   }
-  .works .works-tarm-box {
+  .works .works-term-box {
     padding: 16px;
   }
 
-  .works .works-tarm-box a {
+  .works .works-term-box a {
     display: flex;
     flex-direction: row;
     width: 100%;
   }
-  .works .works-tarm-box:nth-of-type(2n) a {
+  .works .works-term-box:nth-of-type(2n) a {
     flex-direction: row-reverse;
   }
 
-  .works .works-tarm-box .box-img {
+  .works .works-term-box .box-img {
     border: 1px solid #333;
     width: 50%;
   }
-  .works .works-tarm-box .box-img img {
+  .works .works-term-box .box-img img {
     border-radius: 0;
     vertical-align: bottom;
   }
-  .works-tarm-txt {
+  .works-term-txt {
     width: 50%;
     padding: 12px 16px;
   }

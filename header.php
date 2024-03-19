@@ -21,12 +21,6 @@
                 )
             );
             ?>
-            <!-- <ul id="header-nav" class="menu">
-                <li class="menu-item"><a href="#">トップ</a></li>
-                <li class="menu-item"><a href="news.html">お知らせ</a></li>
-                <li class="menu-item"><a href="works.html">実績</a></li>
-                <li class="menu-item"><a href="contact.html">お問い合わせ</a></li>
-            </ul> -->
             <button id="hamburger">
                 <span id="btn-line"></span>
             </button>
