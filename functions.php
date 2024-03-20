@@ -101,19 +101,38 @@ function new_excerpt_more($post)
 add_filter('excerpt_more', 'new_excerpt_more');
 
 // アーカイブタイトルのフィルター
-add_filter( 'get_the_archive_title', function($title){
-	if(is_category()){ // カテゴリーページ
-		$title = single_cat_title('', false);
-	} elseif(is_tag()){ // タグページ
-		$title = single_tag_title('', false);
-	} elseif(is_tax()){ // タクソノミーページ
-		$title = single_term_title('', false);
-	} elseif(is_post_type_archive()){ //カスタム投稿タイプアーカイブページ
-		$title = post_type_archive_title('', false);
-	}
-    return $title;
+add_filter('get_the_archive_title', function ($title) {
+  if (is_category()) { // カテゴリーページ
+    $title = single_cat_title('', false);
+  } elseif (is_tag()) { // タグページ
+    $title = single_tag_title('', false);
+  } elseif (is_tax()) { // タクソノミーページ
+    $title = single_term_title('', false);
+  } elseif (is_post_type_archive()) { //カスタム投稿タイプアーカイブページ
+    $title = post_type_archive_title('', false);
+  }
+  return $title;
 });
 
 // アイキャッチ画像の有効化
 add_theme_support('post-thumbnails');
 add_image_size('content', 1280, 853, true);
+
+// 子ページを取得
+function get_child_pages($number = -1, $specific_id = null)
+{
+  if (isset($specific_id)) :
+    $parent_id = $specific_id;
+  else :
+    $parent_id = get_the_ID();
+  endif;
+  $args = array(
+    'posts_per_page' => $number,
+    'post_type' => 'page',
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+    'post_parent' => $parent_id,
+  );
+  $child_pages = new Wp_Query($args);
+  return $child_pages;
+}

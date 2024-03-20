@@ -39,47 +39,29 @@
       </div>
     </div>
     <div class="container works-container">
-      <h2 class="section-title">実績</h2>
+      <?php
+      $works_obj = get_page_by_path('works');
+      $post = $works_obj;
+      setup_postdata($post);
+      $works_title = get_the_title();
+      ?>
+      <h2 class="section-title"><?php the_title(); ?></h2>
+      <?php wp_reset_postdata(); ?>
       <div class="box works-term-box">
-        <div class="container works-term-container">
-          <div class="img-box">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-          </div>
-          <div class="content-box">
-            <h3>WEB制作</h3>
-            <p>
-              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-            </p>
-            <a class="works-term-link" href="works.html">WEB制作の実績ページへ</a>
-          </div>
-        </div>
-        <div class="container works-term-container">
-          <div class="img-box">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-          </div>
-          <div class="content-box">
-            <h3>動画制作</h3>
-            <p>
-              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-            </p>
-            <a class="works-term-link" href="works.html">動画制作の実績ページへ</a>
-          </div>
-        </div>
-        <div class="container works-term-container">
-          <div class="img-box">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-          </div>
-          <div class="content-box">
-            <h3>SNS運用</h3>
-            <p>
-              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-            </p>
-            <a class="works-term-link" href="works.html">SNS運用の実績ページへ</a>
-          </div>
-        </div>
+        <?php
+        $works_pages = get_child_pages(-1, $works_obj->ID);
+        if ($works_pages->have_posts()) :
+          while ($works_pages->have_posts()) : $works_pages->the_post();
+        ?>
+        <?php get_template_part('template-parts/content-works-common'); ?>
+        <?php endwhile;
+        endif;
+        wp_reset_postdata();
+        ?>
       </div>
     </div>
   </div>
+
 </main>
 
 <?php get_footer(); ?>
