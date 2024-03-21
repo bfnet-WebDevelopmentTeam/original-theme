@@ -16,21 +16,8 @@
           )
         );
         if ($args->have_posts()) :
-          while ($args->have_posts()) : $args->the_post(); ?>
-            <ul>
-              <li>
-                <a href="<?php the_permalink(); ?>">
-                  <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?></time>
-                  <div class="news-box-content">
-                    <p class="news-title"><?php the_title(); ?></p>
-                    <p class="news-text">
-                      <?php the_excerpt(); ?>
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-        <?php
+          while ($args->have_posts()) : $args->the_post();
+            get_template_part('template-parts/content-loop-news');
           endwhile;
         endif;
         wp_reset_postdata();
@@ -53,7 +40,7 @@
         if ($works_pages->have_posts()) :
           while ($works_pages->have_posts()) : $works_pages->the_post();
         ?>
-        <?php get_template_part('template-parts/content-works-common'); ?>
+            <?php get_template_part('template-parts/content-works'); ?>
         <?php endwhile;
         endif;
         wp_reset_postdata();
@@ -61,7 +48,5 @@
       </div>
     </div>
   </div>
-
 </main>
-
 <?php get_footer(); ?>

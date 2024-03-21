@@ -1,12 +1,5 @@
 <?php
 
-// add_theme_support('title-tag');
-// function my_title_separator($separator) {
-//   $separator = '|';
-//   return $separator;
-// }
-// add_filter('document_title_separator', 'my_title_separator');
-
 add_action('init', function () {
   add_theme_support('title-tag');
 });
@@ -36,6 +29,9 @@ function my_body_class($classes)
   return $classes;
 }
 add_filter('body_class', 'my_body_class');
+
+// the_content()でpタグを自動付与させない
+remove_filter('the_content', 'wpautop');
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
@@ -117,6 +113,16 @@ add_filter('get_the_archive_title', function ($title) {
 // アイキャッチ画像の有効化
 add_theme_support('post-thumbnails');
 add_image_size('content', 1280, 853, true);
+add_image_size('top_works', 800, 450, true);
+
+// テンプレートごとのメイン画像
+function get_main_image() {
+  global $post;
+
+  if(is_page()):
+    return get_the_post_thumbnail($post->ID, 'detail');
+  endif;
+}
 
 // 子ページを取得
 function get_child_pages($number = -1, $specific_id = null)

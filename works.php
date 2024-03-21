@@ -1,15 +1,17 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: 実績テンプレート
+*/
+
+get_header(); ?>
+
 <div class="fv">
-  <?php echo get_main_image(); ?>
   <p>実績</p>
 </div>
 <?php get_template_part('template-parts/breadcrumbs'); ?>
 <main>
   <div class="inner">
     <div class="container works-container">
-      <?php 
-
-      ?>
       <h2 class="section-title">実績</h2>
       <div class="container works-term-container">
         <h3 class="works-term-heading">実績分類01</h3>

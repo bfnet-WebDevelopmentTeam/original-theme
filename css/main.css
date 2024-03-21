@@ -122,6 +122,22 @@ main {
 }
 
 /* レイアウト */
+.fv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url(../imgs/living-room-8254772_1280.jpg) center/cover;
+  aspect-ratio: 3 / 1;
+}
+.fv p {
+  font-size: 22px;
+  color: var(--text-color-white);
+  font-weight: bold;
+  text-shadow: var(--text-shadow-color);
+}
 .header-inner {
   display: flex;
   justify-content: space-between;
@@ -254,21 +270,8 @@ footer {
 
 /* トップページ */
 .home .fv {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../imgs/fv.jpg) center/cover;
-  width: 100%;
+  background-image: url(../imgs/fv.jpg);
   aspect-ratio: 16 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.home .fv p {
-  font-size: 22px;
-  color: var(--text-color-white);
-  font-weight: bold;
-  text-shadow: var(--text-shadow-color);
 }
 .home .news-container {
   margin-bottom: 40px;
@@ -371,10 +374,10 @@ footer {
 }
 
 /* Worksページ */
-.works .works-term-heading {
+.page-template-works .works-term-heading {
   margin-bottom: 16px;
 }
-.works .works-term-container:not(.works .works-term-container:last-child) {
+.page-template-works .works-term-container:not(.works .works-term-container:last-child) {
   margin-bottom: 24px;
 }
 
@@ -447,7 +450,7 @@ footer {
   .works-term-box {
     margin-bottom: 32px;
   }
-  .home .fv p {
+  .fv p {
     font-size: 28px;
   }
   .section-title {
@@ -456,13 +459,13 @@ footer {
   }
   .section-sub-title {
     font-size: 24px;
-  } 
+  }
 
-/* トップページ */
+  /* トップページ */
   .home .works-term-container {
     margin-bottom: 32px;
   }
-  .home .works-term-container  {
+  .home .works-term-container {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -503,30 +506,30 @@ footer {
   }
 
   /* Worksページ */
-  .works .works-term-heading {
+  .page-template-works .works-term-heading {
     margin-bottom: 24px;
   }
-  .works .works-term-container:not(.works .works-term-container:last-child) {
+  .page-template-works .works-term-container:not(.works .works-term-container:last-child) {
     margin-bottom: 48px;
   }
-  .works .works-term-box {
+  .page-template-works .works-term-box {
     padding: 16px;
   }
 
-  .works .works-term-box a {
+  .page-template-works .works-term-box a {
     display: flex;
     flex-direction: row;
     width: 100%;
   }
-  .works .works-term-box:nth-of-type(2n) a {
+  .page-template-works .works-term-box:nth-of-type(2n) a {
     flex-direction: row-reverse;
   }
 
-  .works .works-term-box .box-img {
+  .page-template-works .works-term-box .box-img {
     border: 1px solid #333;
     width: 50%;
   }
-  .works .works-term-box .box-img img {
+  .page-template-works .works-term-box .box-img img {
     border-radius: 0;
     vertical-align: bottom;
   }
