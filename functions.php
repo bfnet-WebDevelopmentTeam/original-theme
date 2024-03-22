@@ -61,24 +61,35 @@ function create_post_type()
       )
     )
   );
-  // register_post_type(
-  //   'works',
-  //   array(
-  //     'label' => '実績',
-  //     'public' => true,
-  //     'has_archive' => true,
-  //     'menu_position' => 5,
-  //     'show_in_rest' => true,
-  //     'support' => array(
-  //       'title',
-  //       'editor',
-  //       'thumbnail',
-  //       'custom-fields',
-  //       'revisions',
-  //       'excerpt',
-  //     )
-  //   )
-  // );
+  register_post_type(
+    'register_works',
+    array(
+      'label' => '実績',
+      'public' => true,
+      'has_archive' => true,
+      'menu_position' => 5,
+      'show_in_rest' => true,
+      'support' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        'custom-fields',
+        'revisions',
+        'excerpt',
+      )
+    )
+  );
+
+  register_taxonomy(
+    'works_cat',
+    'register_works',
+    array(
+      'label' => 'カテゴリー',
+      'hierarchical' => true,
+      'public' => true,
+      'show_in_rest' => true,
+    )
+    );
 }
 
 add_action('init', 'create_post_type');
