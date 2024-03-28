@@ -129,7 +129,7 @@ main {
   justify-content: center;
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-  url(../imgs/living-room-8254772_1280.jpg) center/cover;
+    url(../imgs/living-room-8254772_1280.jpg) center/cover;
   aspect-ratio: 3 / 1;
 }
 .fv p {
@@ -270,7 +270,9 @@ footer {
 
 /* トップページ */
 .home .fv {
-  background-image: url(../imgs/fv.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../imgs/fv.jpg) center/cover;
+
   aspect-ratio: 16 / 9;
 }
 .home .news-container {
@@ -377,7 +379,8 @@ footer {
 .page-template-works .works-term-heading {
   margin-bottom: 16px;
 }
-.page-template-works .works-term-container:not(.works .works-term-container:last-child) {
+.page-template-works
+  .works-term-container:not(.works .works-term-container:last-child) {
   margin-bottom: 24px;
 }
 
@@ -509,7 +512,8 @@ footer {
   .page-template-works .works-term-heading {
     margin-bottom: 24px;
   }
-  .page-template-works .works-term-container:not(.works .works-term-container:last-child) {
+  .page-template-works
+    .works-term-container:not(.works .works-term-container:last-child) {
     margin-bottom: 48px;
   }
   .page-template-works .works-term-box {

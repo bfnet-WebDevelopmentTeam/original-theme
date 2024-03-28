@@ -1,52 +1,18 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/reset.css" class="css" />
-    <link rel="stylesheet" href="css/main.css" class="css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>WP_テスト用サイト_実績一覧ページ</title>
-  </head>
-  <body class="page-template-works archive archive-works">
-    <header>
-      <div class="inner header-inner">
-        <h1>WP_テスト用サイト</h1>
-        <ul id="header-nav" class="menu">
-          <li class="menu-item"><a href="index.html">トップ</a></li>
-          <li class="menu-item"><a href="news.html">お知らせ</a></li>
-          <li class="menu-item"><a href="works.html">実績</a></li>
-          <li class="menu-item"><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-        <button id="hamburger">
-          <span id="btn-line"></span>
-        </button>
-      </div>
-    </header>
-    
-    <div class="fv">
-      <p>実績</p>
-    </div>
-    <div class="breadcrumbs">
-      <div class="inner">
-        <span><a href="index.html">トップ</a></span>
-        <span><span class="arrow">></span><a href="news.html">お知らせ</a></span>
-        <span><span class="arrow">></span><a href="works.html">実績</a></span>
-        <span><span class="arrow">></span><a href="contact.html">お問い合わせ</a></span>
-      </div>
-    </div>
-    <main>
-      <div class="inner">
-        <div class="container works-container">
-          <h2 class="section-title">実績</h2>
+<?php get_header(); ?>
+<?php get_template_part("template-parts/breadcrumbs"); ?>
+<div class="fv">
+  <p>実績</p>
+</div>
+<main>
+  <div class="inner">
+    <div class="container works-container">
+      <h2 class="section-title">実績</h2>
+      <?php
+      $works_cat = get_terms(array('taxonomy' => 'works_cat'));
+      if (!empty($works_cat)) : ?>
+        <?php foreach ($works_cat as $cat) : ?>
           <div class="container works-term-container">
-            <h3 class="works-term-heading">実績分類01</h3>
+            <h3 class="works-term-heading"><?php echo $cat->name; ?></h3>
             <div class="works-term-box">
               <a href="single-works.html">
                 <div class="box-img">
@@ -79,7 +45,7 @@
                 <p class="works-term-txt">テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。</p>
               </a>
             </div>
-           <a class="works-term-link" href="works-term-archive-term-archive.html">実績分類01の一覧ページへ</a>
+            <a class="works-term-link" href="works-term-archive-term-archive.html">実績分類01の一覧ページへ</a>
           </div>
           <div class="container works-term-container">
             <h3 class="works-term-heading">実績分類02</h3>
@@ -115,7 +81,7 @@
                 <p class="works-term-txt">テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。</p>
               </a>
             </div>
-           <a class="works-term-link" href="works-term-archive.html">実績分類02の一覧ページへ</a>
+            <a class="works-term-link" href="works-term-archive.html">実績分類02の一覧ページへ</a>
           </div>
           <div class="container works-term-container">
             <h3 class="works-term-heading">実績分類03</h3>
@@ -151,23 +117,11 @@
                 <p class="works-term-txt">テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。</p>
               </a>
             </div>
-           <a class="works-term-link" href="works-term-archive.html">実績分類03の一覧ページへ</a>
+            <a class="works-term-link" href="works-term-archive.html">実績分類03の一覧ページへ</a>
           </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div class="inner footer-inner">
-        <p class="footer-title"><a href="#">WP_テストサイト</a></p>
-        <ul class="menu footer-nav">
-          <li class="menu-item"><a href="#">トップ</a></li>
-          <li class="menu-item"><a href="news.html">お知らせ</a></li>
-          <li class="menu-item"><a href="works.html">実績</a></li>
-          <li class="menu-item"><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-        <p class="copyright">©WP_テストサイト</p>
-      </div>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
-</html>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </div>
+  </div>
+</main>
+<?php get_footer(); ?>

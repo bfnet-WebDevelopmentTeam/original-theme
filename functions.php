@@ -51,7 +51,7 @@ function create_post_type()
       'has_archive' => true,
       'menu_position' => 5,
       'show_in_rest' => true,
-      'support' => array(
+      'supports' => array(
         'title',
         'editor',
         'thumbnail',
@@ -69,7 +69,7 @@ function create_post_type()
       'has_archive' => true,
       'menu_position' => 5,
       'show_in_rest' => true,
-      'support' => array(
+      'supports' => array(
         'title',
         'editor',
         'thumbnail',
@@ -135,21 +135,3 @@ function get_main_image() {
   endif;
 }
 
-// 子ページを取得
-function get_child_pages($number = -1, $specific_id = null)
-{
-  if (isset($specific_id)) :
-    $parent_id = $specific_id;
-  else :
-    $parent_id = get_the_ID();
-  endif;
-  $args = array(
-    'posts_per_page' => $number,
-    'post_type' => 'page',
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
-    'post_parent' => $parent_id,
-  );
-  $child_pages = new Wp_Query($args);
-  return $child_pages;
-}
