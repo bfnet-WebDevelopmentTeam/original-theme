@@ -9,12 +9,13 @@
       <h2 class="section-title">お知らせ</h2>
       <div class="box news-box">
         <?php
-        $args = new Wp_Query(
+        $args = new WP_Query(
           array(
             'post_type' => 'news',
             'posts_per_page' => 3,
           )
         );
+
         if ($args->have_posts()) :
           while ($args->have_posts()) : $args->the_post();
             get_template_part('template-parts/content-loop-news');
@@ -28,44 +29,12 @@
     <div class="container works-container">
       <h2 class="section-title">実績</h2>
       <div class="box works-term-box">
-
-        <div class="container works-term-container">
-          <div class="img-box">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-          </div>
-          <div class="content-box">
-            <h3><?php echo $cat->name; ?>WEB制作</h3>
-            <p>
-              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-            </p>
-            <a class="works-term-link" href="works.html">WEB制作の実績ページへ</a>
-          </div>
-        </div>
-        <div class="container works-term-container">
-          <div class="img-box">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-          </div>
-          <div class="content-box">
-            <h3>動画制作</h3>
-            <p>
-              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-            </p>
-            <a class="works-term-link" href="works.html">動画制作の実績ページへ</a>
-          </div>
-        </div>
-        <div class="container works-term-container">
-          <div class="img-box">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/web01.jpg" />
-          </div>
-          <div class="content-box">
-            <h3>SNS運用</h3>
-            <p>
-              実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。実績の説明文。
-            </p>
-            <a class="works-term-link" href="works.html">SNS運用の実績ページへ</a>
-          </div>
-        </div>
-
+        <?php
+        $terms = get_terms(array('taxonomy' => 'works_cat', 'include' => "web-production", "video-production", "sns", 'parent' => 0, 'orderby' => 'slug', 'order' => 'DESC'));
+        foreach ($terms as $term) :
+          include 'template-parts/content-works-term.php';
+        endforeach;
+        ?>
       </div>
     </div>
   </div>
