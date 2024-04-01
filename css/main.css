@@ -375,14 +375,17 @@ footer {
   margin-right: 16px;
 }
 
-/* Worksページ */
-.page-template-works .works-term-heading {
+/* Worksページ, termページ */
+.post-type-archive-register_works .works-term-heading, .tax-works_cat .works-term-heading {
   margin-bottom: 16px;
 }
-.page-template-works
-  .works-term-container:not(.works .works-term-container:last-child) {
+.post-type-archive-register_works
+  .works-term-container:not(.post-type-archive-register_works .works-term-container:last-child),
+  .tax-works_cat .works-term-container:not(.tax-works_cat .works-term-container:last-child) {
   margin-bottom: 24px;
 }
+
+/* Worksタームアーカイブページ */
 
 /* お問い合わせページ */
 .contact form {
@@ -463,6 +466,10 @@ footer {
   .section-sub-title {
     font-size: 24px;
   }
+  .works-term-txt {
+    width: 50%;
+    padding: 12px 16px;
+  }
 
   /* トップページ */
   .home .works-term-container {
@@ -508,38 +515,57 @@ footer {
     margin-bottom: 9px;
   }
 
-  /* Worksページ */
-  .page-template-works .works-term-heading {
+  /* Worksページ, termページ */
+  .post-type-archive-register_works .works-term-heading, .tax-works_cat .works-term-heading {
     margin-bottom: 24px;
   }
-  .page-template-works
-    .works-term-container:not(.works .works-term-container:last-child) {
+  .post-type-archive-register_works
+    .works-term-container:not(.works .works-term-container:last-child), .tax-works_cat .works-term-container:not(.works .works-term-container:last-child) {
     margin-bottom: 48px;
   }
-  .page-template-works .works-term-box {
+  .post-type-archive-register_works .works-term-box, .tax-works_cat .works-term-box {
     padding: 16px;
   }
 
-  .page-template-works .works-term-box a {
+  .post-type-archive-register_works .works-term-box a, .tax-works_cat .works-term-box a {
     display: flex;
     flex-direction: row;
     width: 100%;
   }
-  .page-template-works .works-term-box:nth-of-type(2n) a {
+  .post-type-archive-register_works .works-term-box:nth-of-type(2n) a, .tax-works_cat .works-term-box:nth-of-type(2n) a {
     flex-direction: row-reverse;
   }
 
-  .page-template-works .works-term-box .box-img {
+  .post-type-archive-register_works .works-term-box .box-img, .tax-works_cat .works-term-box .box-img {
     border: 1px solid #333;
     width: 50%;
   }
-  .page-template-works .works-term-box .box-img img {
+  .post-type-archive-register_works .works-term-box .box-img img, .tax-works_cat .works-term-box .box-img img {
     border-radius: 0;
     vertical-align: bottom;
   }
-  .works-term-txt {
+
+  /* Worksタームアーカイブページ */
+  .works-term-archive .works-term-box {
+    padding: 16px;
+  }
+
+  .works-term-archive .works-term-box a {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .works-term-archive .works-term-box:nth-of-type(2n) a {
+    flex-direction: row-reverse;
+  }
+
+  .works-term-archive .works-term-box .box-img {
+    border: 1px solid #333;
     width: 50%;
-    padding: 12px 16px;
+  }
+  .works-term-archive .works-term-box .box-img img {
+    border-radius: 0;
+    vertical-align: bottom;
   }
 
   /* お問い合わせページ */
