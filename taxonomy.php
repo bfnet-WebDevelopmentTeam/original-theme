@@ -19,9 +19,9 @@
         foreach ($works_cat as $cat) :
       ?>
           <div class="container works-term-container">
-            <h3 class="works-term-heading">実績分類01</h3>
+            <h3 class="works-term-heading"><?php echo $cat->name; ?></h3>
            <?php get_template_part('template-parts/content-loop-works'); ?>
-            <a class="works-term-link" href="works-term-archive-term-archive.html">実績分類01の一覧ページへ</a>
+            <a class="works-term-link" href="<?php echo get_term_link($cat); ?>"><?php echo $cat->name; ?>の一覧ページへ</a>
           </div>
       <?php
         endforeach;
