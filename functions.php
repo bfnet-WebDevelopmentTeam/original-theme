@@ -89,7 +89,7 @@ function create_post_type()
       'public' => true,
       'show_in_rest' => true,
     )
-    );
+  );
 }
 
 add_action('init', 'create_post_type');
@@ -127,11 +127,24 @@ add_image_size('content', 1280, 853, true);
 add_image_size('archive', 800, 450, true);
 
 // テンプレートごとのメイン画像
-function get_main_image() {
+function get_main_image()
+{
   global $post;
 
-  if(is_page()):
+  if (is_page()) :
     return get_the_post_thumbnail($post->ID, 'detail');
   endif;
 }
 
+// メインクエリの投稿表示数指定
+function my_pre_get_posts($query)
+{
+  if (is_admin() || ! $query->is_main_query()) {
+    return;
+  }
+  if ($query->is_archive() || $query->is_tax()) {
+    $query->set('posts_per_page', 10);
+    return;
+  }
+}
+add_action('pre_get_posts', 'my_pre_get_posts');
