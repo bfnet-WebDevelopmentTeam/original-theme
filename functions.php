@@ -124,7 +124,7 @@ add_filter('get_the_archive_title', function ($title) {
 // アイキャッチ画像の有効化
 add_theme_support('post-thumbnails');
 add_image_size('content', 1280, 853, true);
-add_image_size('top_works', 800, 450, true);
+add_image_size('archive', 800, 450, true);
 
 // テンプレートごとのメイン画像
 function get_main_image() {

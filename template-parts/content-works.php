@@ -1,6 +1,6 @@
 <div class="container works-term-container">
   <div class="img-box">
-    <?php the_post_thumbnail('top_works'); ?>
+    <?php the_post_thumbnail('archive'); ?>
   </div>
   <div class="content-box">
     <h3><?php the_title(); ?></h3>
