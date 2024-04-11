@@ -13,10 +13,10 @@
 
     <ul class="prev_next_list">
         <li class="prev">
-            « <a href="パーマリンク" rel="prev">前の記事のタイトル</a>
+            <?php previous_post_link(); ?>
         </li>
         <li class="next">
-            <a href="パーマリンク" rel="next">次の記事のタイトル</a> »
+           <?php next_post_link(); ?>
         </li>
     </ul>
 </article>
