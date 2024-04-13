@@ -121,6 +121,17 @@ main {
   padding: 12px 8px;
 }
 
+/* カスタムフィールド */
+.custom-field dl {
+  margin-bottom: 40px;
+}
+.custom-field dt {
+  font-weight: bold;
+}
+.custom-field dd:not(.custom-field dd:last-child) {
+  margin-bottom: 8px;
+}
+
 /* レイアウト */
 .fv {
   width: 100%;
@@ -376,12 +387,16 @@ footer {
 }
 
 /* Worksページ, termページ */
-.post-type-archive-register_works .works-term-heading, .tax-works_cat .works-term-heading {
+.post-type-archive-register_works .works-term-heading,
+.tax-works_cat .works-term-heading {
   margin-bottom: 16px;
 }
 .post-type-archive-register_works
-  .works-term-container:not(.post-type-archive-register_works .works-term-container:last-child),
-  .tax-works_cat .works-term-container:not(.tax-works_cat .works-term-container:last-child) {
+  .works-term-container:not(
+    .post-type-archive-register_works .works-term-container:last-child
+  ),
+.tax-works_cat
+  .works-term-container:not(.tax-works_cat .works-term-container:last-child) {
   margin-bottom: 24px;
 }
 
@@ -407,9 +422,16 @@ footer {
 
 /* タブレットサイズのスタイル */
 @media (min-width: 768px) {
+  /* モジュール */
+  /* カスタムフィールド */
+  .custom-field dd:not(.custom-field dd:last-child) {
+    margin-bottom: 16px;
+  }
   .box {
     padding: 24px;
   }
+
+  /* レイアウト */
   .header-inner {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -516,31 +538,39 @@ footer {
   }
 
   /* Worksページ, termページ */
-  .post-type-archive-register_works .works-term-heading, .tax-works_cat .works-term-heading {
+  .post-type-archive-register_works .works-term-heading,
+  .tax-works_cat .works-term-heading {
     margin-bottom: 24px;
   }
   .post-type-archive-register_works
-    .works-term-container:not(.works .works-term-container:last-child), .tax-works_cat .works-term-container:not(.works .works-term-container:last-child) {
+    .works-term-container:not(.works .works-term-container:last-child),
+  .tax-works_cat
+    .works-term-container:not(.works .works-term-container:last-child) {
     margin-bottom: 48px;
   }
-  .post-type-archive-register_works .works-term-box, .tax-works_cat .works-term-box {
+  .post-type-archive-register_works .works-term-box,
+  .tax-works_cat .works-term-box {
     padding: 16px;
   }
 
-  .post-type-archive-register_works .works-term-box a, .tax-works_cat .works-term-box a {
+  .post-type-archive-register_works .works-term-box a,
+  .tax-works_cat .works-term-box a {
     display: flex;
     flex-direction: row;
     width: 100%;
   }
-  .post-type-archive-register_works .works-term-box:nth-of-type(2n) a, .tax-works_cat .works-term-box:nth-of-type(2n) a {
+  .post-type-archive-register_works .works-term-box:nth-of-type(2n) a,
+  .tax-works_cat .works-term-box:nth-of-type(2n) a {
     flex-direction: row-reverse;
   }
 
-  .post-type-archive-register_works .works-term-box .box-img, .tax-works_cat .works-term-box .box-img {
+  .post-type-archive-register_works .works-term-box .box-img,
+  .tax-works_cat .works-term-box .box-img {
     border: 1px solid #333;
     width: 50%;
   }
-  .post-type-archive-register_works .works-term-box .box-img img, .tax-works_cat .works-term-box .box-img img {
+  .post-type-archive-register_works .works-term-box .box-img img,
+  .tax-works_cat .works-term-box .box-img img {
     border-radius: 0;
     vertical-align: bottom;
   }
@@ -581,6 +611,7 @@ footer {
 
 /* PCサイズのスタイル */
 @media (min-width: 1023px) {
+  /* レイアウト */
   .news-box li {
     margin-bottom: 32px;
   }

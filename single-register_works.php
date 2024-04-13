@@ -2,11 +2,11 @@
 <?php get_template_part('template-parts/breadcrumbs'); ?>
 <main>
     <div class="inner">
-        <?php
-        if (have_posts()) :
+        <?php if (have_posts()) :
             while (have_posts()) : the_post();
-                get_template_part('template-parts/content-single');
-            endwhile;
+        ?>
+                <?php get_template_part('template-parts/content-register_works'); ?>
+        <?php endwhile;
         endif;
         ?>
     </div>
@@ -18,6 +18,5 @@
             <a href="#"><i class="fa-brands fa-square-instagram fa-2x fa-fw"></i></a>
         </div>
     </div>
-
 </main>
 <?php get_footer(); ?>

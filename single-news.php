@@ -5,7 +5,7 @@
         <?php if (have_posts()) :
             while (have_posts()) : the_post();
         ?>
-              <?php get_template_part('template-parts/content-news'); ?>
+                <?php get_template_part('template-parts/content-news'); ?>
         <?php endwhile;
         endif;
         ?>
@@ -17,7 +17,6 @@
         <div class="instagram-area">
             <a href="#"><i class="fa-brands fa-square-instagram fa-2x fa-fw"></i></a>
         </div>
-    </div>
     </div>
 </main>
 <?php get_footer(); ?>
