@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="fv">
-  <p>実績</p>
+  <p><?php echo get_the_archive_title(); ?></p>
 </div>
 <?php get_template_part('template-parts/breadcrumbs'); ?>
 

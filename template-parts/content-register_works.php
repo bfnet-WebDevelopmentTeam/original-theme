@@ -13,10 +13,14 @@
 
     <div class="custom-field">
         <dl>
+            <?php if(get_field('business-scope')): ?>
             <dt>業務範囲: </dt>
             <dd><?php the_field('business-scope'); ?></dd>
+            <?php endif; ?>
+            <?php if(get_field('production-period')): ?>
             <dt>制作期間: </dt>
             <dd><?php the_field('production-period'); ?></dd>
+            <?php endif; ?>
             <?php if (get_field('remarks')) : ?>
                 <dt>備考: </dt>
                 <dd><?php the_field('remarks'); ?></dd>
