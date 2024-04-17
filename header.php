@@ -26,4 +26,14 @@
             </button>
         </div>
     </header>
-    
+    <?php if (is_front_page() || is_archive()) : ?>
+        <div class="fv">
+            <?php if (is_front_page()) : ?>
+                <p>FVテキスト</p>
+            <?php endif; ?>
+            <?php if (is_archive()) : ?>
+                <p><?php echo get_the_archive_title(); ?></p>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+    <?php get_template_part('template-parts/breadcrumbs'); ?>

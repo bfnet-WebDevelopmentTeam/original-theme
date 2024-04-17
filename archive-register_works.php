@@ -1,8 +1,4 @@
 <?php get_header(); ?>
-<div class="fv">
-  <p><?php echo get_the_archive_title(); ?></p>
-</div>
-<?php get_template_part("template-parts/breadcrumbs"); ?>
 <main>
   <div class="inner">
     <div class="container works-container">

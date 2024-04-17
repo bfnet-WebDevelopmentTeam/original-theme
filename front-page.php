@@ -1,8 +1,4 @@
 <?php get_header(); ?>
-<div class="fv">
-  <p>FVテキスト</p>
-</div>
-<?php get_template_part('template-parts/breadcrumbs'); ?>
 <main>
   <div class="inner">
     <div class="container news-container">
@@ -18,7 +14,7 @@
 
         if ($args->have_posts()) :
           while ($args->have_posts()) : $args->the_post();
-            get_template_part('template-parts/content-loop-news');
+            get_template_part('template-parts/content-loop-archive');
           endwhile;
         endif;
         wp_reset_postdata();
