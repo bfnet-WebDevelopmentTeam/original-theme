@@ -136,10 +136,20 @@ function get_main_image()
   endif;
 }
 
+// テンプレートごとのメインタイトル
+function get_main_title()
+{
+  if (is_front_page()) :
+    return bloginfo('name');
+  elseif (is_tax()) :
+    return single_term_title();
+  endif;
+}
+
 // メインクエリの投稿表示数指定
 function my_pre_get_posts($query)
 {
-  if (is_admin() || ! $query->is_main_query()) {
+  if (is_admin() || !$query->is_main_query()) {
     return;
   }
   if ($query->is_archive() || $query->is_tax()) {
